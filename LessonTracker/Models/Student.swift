@@ -9,12 +9,11 @@ import Foundation
 import SwiftData
 
 @Model
-class Student {
+class Student: Identifiable {
+    var id = UUID()
     var name: String
     var age: Int
-    
-    var payments = [Payment]()
-    
+
     init(name: String, age: Int) {
         self.name = name
         self.age = age
@@ -27,4 +26,8 @@ extension Student {
         Student(name: "Kaleb", age: 11),
         Student(name: "Lilly", age: 9),
     ]
+    
+    static let breanna = sampleData[0]
+    static let kaleb = sampleData[1]
+    static let lilly = sampleData[2]
 }

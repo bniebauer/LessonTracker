@@ -13,13 +13,24 @@ struct LessonTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                LogView()
+                    .tabItem {
+                        Image(systemName: "plus")
+                        Text("Add")
+                    }
+                
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+            }
         }
         .modelContainer(for: [
-            Lesson.self,
+            Student.self,
             Payment.self,
             Activity.self,
-            Student.self,
         ], inMemory: false, isAutosaveEnabled: true)
     }
 }

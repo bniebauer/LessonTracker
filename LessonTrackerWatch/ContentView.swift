@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  WatchLessonTracker Watch App
+//  LessonTrackerWatch
 //
-//  Created by Brenton Niebauer on 11/25/24.
+//  Created by Brenton Niebauer on 4/9/25.
 //
 
 import SwiftUI

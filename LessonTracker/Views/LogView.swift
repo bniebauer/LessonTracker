@@ -9,34 +9,39 @@ import SwiftUI
 import SwiftData
 
 struct LogView: View {
-    
+    @Environment(\.modelContext) private var modelContext
+    @Query private var payments: [Payment]
+    @State private var path = NavigationPath()
+    @State private var isShowing: Bool = false
     var body: some View {
-        VStack {
-            NavigationLink(destination: PaymentFormView()) {
-                Text("Add Payment")
-                    .padding()
-                    .background(.green)
-                    .foregroundStyle(.white)
-                    .cornerRadius(10)
+        NavigationStack(path: $path) {
+            List {
+                ForEach(payments) { payment in
+                    NavigationLink {
+                        LogLessonSheet(payment: payment)
+                    } label: {
+                        Text("\(payment.activity.name) - \(payment.student.name) - \(payment.status)")
+                    }
+                }
             }
-            NavigationLink(destination: LessonFormView()) {
-                Text("Add Lesson")
-                    .padding()
-                    .background(.blue)
-                    .foregroundStyle(.white)
-                    .cornerRadius(10)
+            .navigationTitle("LessonTracker")
+            .toolbar {
+                Button("Add Payment", action: addPayment)
+            }
+            .sheet(isPresented: $isShowing) {
+                PaymentFormView()
             }
         }
-        
     }
     
     func addPayment() {
-        
+        isShowing = true
     }
+
 }
 
+
 #Preview {
-    NavigationStack {
-        LogView()
-    }
+    LogView()
+        .modelContainer(SampleData.shared.modelContainer)
 }
