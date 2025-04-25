@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "25ECD70F-19BD-4CAC-85B3-7E8170AF63CA",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:LessonTracker.xcodeproj",
+      "identifier" : "32C292622C98DDA5004B12C3",
+      "name" : "LessonTracker"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:LessonTracker.xcodeproj",
+        "identifier" : "32C292742C98DDA6004B12C3",
+        "name" : "LessonTrackerTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:LessonTracker.xcodeproj",
+        "identifier" : "32C2927E2C98DDA6004B12C3",
+        "name" : "LessonTrackerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
