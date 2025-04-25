@@ -1,21 +1,23 @@
 //
 //  LogView.swift
-//  LessonTracker
+//  LessonTrackerWatch Watch App
 //
-//  Created by Brenton Niebauer on 9/16/24.
+//  Created by Brenton Niebauer on 4/12/25.
 //
 
 import SwiftUI
 import SwiftData
 
 struct LogView: View {
-    @Environment(\.modelContext) private var modelContext
     @Query private var payments: [Payment]
-    @State private var path = NavigationPath()
-    @State private var isShowing: Bool = false
+    
     var body: some View {
-        NavigationStack(path: $path) {
-            List {
+        NavigationStack {
+            ScrollView {
+                Button("Add Payment", action: addPayment)
+                
+                Divider()
+                
                 ForEach(payments) { payment in
                     NavigationLink {
                         LogLessonSheet(payment: payment)
@@ -24,24 +26,13 @@ struct LogView: View {
                     }
                 }
             }
-            .navigationTitle("LessonTracker")
-            .toolbar {
-                Button("Add Payment", action: addPayment)
-            }
-            .sheet(isPresented: $isShowing) {
-                NavigationStack {
-                    PaymentFormView()
-                }
-            }
         }
     }
     
     func addPayment() {
-        isShowing = true
+        
     }
-
 }
-
 
 #Preview {
     LogView()

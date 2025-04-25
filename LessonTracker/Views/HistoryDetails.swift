@@ -12,27 +12,23 @@ struct HistoryDetails: View {
     var body: some View {
         Form {
             HStack {
-                Text(payment.activity.name)
-                    .bold()
+                VStack {
+                    Text(payment.student!.name)
+                    Text(payment.activity!.name)
+                        .bold()
+                }
                 Spacer()
-                Text("$\(payment.amount.formatted())")
-                Spacer()
-                Text(payment.date, format: Date.FormatStyle(date: .numeric))
+                VStack(alignment: .trailing) {
+//                    Text("$\(payment.activity!.price.formatted(.currency(code: "USD")))")
+                    Text(payment.date, format: Date.FormatStyle(date: .numeric))
+                }
             }
             .font(.title)
             
             Section("Lessons") {
-                ForEach(payment.lessons) { lesson in
-                    Text("\(lesson.timestamp)")
-                }
-            }
-            
-            Section("Students") {
-                if !payment.students.isEmpty {
-                    ForEach(payment.students) { student in
-                        Text(student.name)
-                    }
-                }
+                ForEach(payment.lessons, id: \.self) { lesson in
+                    Text("\(lesson)")
+                }                
             }
         }
         .navigationTitle("History Details")
@@ -42,6 +38,6 @@ struct HistoryDetails: View {
 
 #Preview {
     NavigationStack {
-        HistoryDetails(payment: Payment.sampleData[1])
+        HistoryDetails(payment: Payment.sampleData[0])
     }
 }
