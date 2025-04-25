@@ -19,9 +19,9 @@ struct LessonCard: View {
                 Button("Undo", systemImage: "arrow.uturn.backward.circle", action: undo)
             }
             
-            Text("\(payment.student.name)")
+            Text("\(payment.student!.name)")
                 .font(.title)
-            Text("\(payment.lessonsCompleted) / \(payment.activity.numberOfLessonsPerPayment)")
+            Text("\(payment.lessonsCompleted) / \(payment.numberOfLessons)")
                 .font(.headline)
             
             Button("Log Lesson", action: incrementLessonsCompleted)
@@ -32,7 +32,7 @@ struct LessonCard: View {
     }
     
     func incrementLessonsCompleted() {
-        if payment.lessons.count < payment.activity.numberOfLessonsPerPayment {
+        if payment.lessons.count < payment.numberOfLessons {
             do {
                 try payment.addLesson(.now)
             } catch {

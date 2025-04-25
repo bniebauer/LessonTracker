@@ -13,13 +13,13 @@ struct HistoryDetails: View {
         Form {
             HStack {
                 VStack {
-                    Text(payment.student.name)
-                    Text(payment.activity.name)
+                    Text(payment.student!.name)
+                    Text(payment.activity!.name)
                         .bold()
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("$\(payment.activity.price.formatted(.currency(code: "USD")))")
+//                    Text("$\(payment.activity!.price.formatted(.currency(code: "USD")))")
                     Text(payment.date, format: Date.FormatStyle(date: .numeric))
                 }
             }

@@ -9,54 +9,66 @@ import SwiftUI
 
 struct LogLessonSheet: View {
     @Environment(\.dismiss) private var dismiss
-    let payment: Payment
     
-    var body: some View {
+    @State private var showingConfirmation: Bool = false
+    @State private var headerMessage: String = ""
+    @State private var confirmationMessage: String = ""
+    
+    let payment: Payment
+    var headerCard: some View {
         VStack {
-            VStack {
+                
+                Text("\(Date.now.formatted(date: .abbreviated, time: .omitted))")
+                    .font(.title)
+                
+                HStack {
                     
-                    Text("\(Date.now.formatted(date: .abbreviated, time: .omitted))")
-                        .font(.title)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 21)
+                            .fill(Color.blue)
+                            .frame(width: 80, height: 80)
+                        
+                        Image(systemName: "calendar.badge.clock")
+                            .font(.system(size: 42))
+                            .foregroundStyle(.white)
+                    }
                     
-                    HStack {
+                    VStack(alignment: .leading) {
                         
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 21)
-                                .fill(Color.blue)
-                                .frame(width: 80, height: 80)
-                            
-                            Image(systemName: "calendar.badge.clock")
-                                .font(.system(size: 42))
-                                .foregroundStyle(.white)
-                        }
+                        Text("\(payment.activity!.name)")
+                            .font(.title)
+                            .padding(.trailing)
+                            .foregroundStyle(.white)
                         
-                        VStack(alignment: .leading) {
-                            
-                            Text("\(payment.activity.name)")
-                                .font(.title)
-                                .padding(.trailing)
-                                .foregroundStyle(.white)
-                            
-                            Text("\(payment.student.name)")
-                                .font(.headline)
-                                .padding(.trailing)
-                            
-                        }
-                        .padding(.trailing)
+                        Text("\(payment.student!.name)")
+                            .font(.headline)
+                            .padding(.trailing)
                         
                     }
-                
-                Button("Attended", action: attendedTapped)
-                    .padding(8)
-                    .background(.blue.opacity(0.9))
-                    .foregroundStyle(.white)
-                    .cornerRadius(25)
+                    .padding(.trailing)
                     
                 }
-                .frame(width: 250, height: 175)
-                .padding([.top, .bottom, .trailing])
-                .background(.gray)
-                .border(.black)
+            
+            Button("Attended", action: attendedTapped)
+                .padding(8)
+                .background(.blue.opacity(0.9))
+                .foregroundStyle(.white)
+                .cornerRadius(25)
+                
+            }
+        .frame(width: 350)
+        .padding([.top, .bottom, .trailing])
+        .background(.gray)
+        .border(.black)
+        .alert(headerMessage, isPresented: $showingConfirmation) {
+            Button("Ok") { }
+        } message: {
+            Text(confirmationMessage)
+        }
+    }
+    var body: some View {
+        VStack {
+            headerCard
             
             List {
                 Section("History") {
@@ -75,6 +87,7 @@ struct LogLessonSheet: View {
             try payment.removeLessons(at: offsets)
         } catch {
             // TODO: add additional code
+            
         }
     }
     
@@ -83,6 +96,10 @@ struct LogLessonSheet: View {
             try payment.addLesson(Date.now)
         } catch {
             // TODO: Add additional code
+            headerMessage = "Uh oh"
+            print(error.localizedDescription)
+            confirmationMessage = error.localizedDescription
+            showingConfirmation = true
         }
     }
 }

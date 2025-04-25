@@ -6,13 +6,35 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LogView: View {
+    @Query private var payments: [Payment]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView {
+                Button("Add Payment", action: addPayment)
+                
+                Divider()
+                
+                ForEach(payments) { payment in
+                    NavigationLink {
+                        LogLessonSheet(payment: payment)
+                    } label: {
+                        Text("\(payment.activity!.name) - \(payment.student!.name) - \(payment.status)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func addPayment() {
+        
     }
 }
 
 #Preview {
     LogView()
+        .modelContainer(SampleData.shared.modelContainer)
 }

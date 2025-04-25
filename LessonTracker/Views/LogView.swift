@@ -20,7 +20,7 @@ struct LogView: View {
                     NavigationLink {
                         LogLessonSheet(payment: payment)
                     } label: {
-                        Text("\(payment.activity.name) - \(payment.student.name) - \(payment.status)")
+                        Text("\(payment.activity!.name) - \(payment.student!.name) - \(payment.status)")
                     }
                 }
             }
@@ -29,7 +29,9 @@ struct LogView: View {
                 Button("Add Payment", action: addPayment)
             }
             .sheet(isPresented: $isShowing) {
-                PaymentFormView()
+                NavigationStack {
+                    PaymentFormView()
+                }
             }
         }
     }
