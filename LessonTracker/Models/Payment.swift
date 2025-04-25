@@ -23,15 +23,17 @@ enum PaymentError: Error, Equatable {
 
 @Model
 class Payment : Identifiable {
-    var id: UUID
+    var id: UUID = UUID()
     
-    var activity: Activity
-    var student: Student
+    var activity: Activity?
+    var student: Student?
     
-    var type: PaymentType?
-    var date: Date
+    var type: PaymentType = PaymentType.Cash
+    var price: Double = 0.0
+    var numberOfLessons: Int = 1
+    var date: Date = Date.now
     
-    private(set) var lessons: [Date]
+    private(set) var lessons: [Date] = []
     
     var confirmation: String?
     
@@ -40,19 +42,22 @@ class Payment : Identifiable {
     }
     
     var status: String {
-        "\(activity.numberOfLessonsPerPayment - lessons.count) Left"
+        activity != nil ? "\(numberOfLessons - lessons.count) Left" : "Unknown"
     }
     
-    init(student: Student, activity: Activity) {
+    init(student: Student, activity: Activity, price: Double, numberOfLessons: Int = 1, type: PaymentType = .Cash) {
         id = UUID()
         lessons = []
         date = .now
         self.student = student
         self.activity = activity
+        self.price = price
+        self.numberOfLessons = numberOfLessons
+        self.type = type
     }
     
-    func addLesson(_ date: Date) throws {
-        let numberOfLessonsRemaining = activity.numberOfLessonsPerPayment - lessonsCompleted
+    func addLesson(_ date: Date) throws {        
+        let numberOfLessonsRemaining = numberOfLessons - lessonsCompleted
         
         if numberOfLessonsRemaining == 0 {
             throw PaymentError.LessonsOutOfRange(reason: "No more lessons available")
@@ -85,8 +90,8 @@ class Payment : Identifiable {
 
 extension Payment {
     static var sampleData: [Payment] = [
-        Payment(student: Student.breanna, activity: Activity(name: "Aerial Silks", price: 190)),
-        Payment(student: Student.kaleb, activity: Activity(name: "Aerial Silks", price: 190)),
-        Payment(student: Student.lilly, activity: Activity(name: "Aerial Silks", price: 190)),
+        Payment(student: Student.breanna, activity: Activity(name: "Aerial Silks"), price: 190.00, numberOfLessons: 10),
+        Payment(student: Student.kaleb, activity: Activity(name: "Aerial Silks"), price: 190.00, numberOfLessons: 10),
+        Payment(student: Student.lilly, activity: Activity(name: "Aerial Silks"), price: 190.00, numberOfLessons: 10),
     ]
 }
