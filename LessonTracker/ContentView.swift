@@ -14,7 +14,7 @@ struct ContentView: View {
             LogView()
                 .tabItem {
                     Image(systemName: "plus")
-                    Text("Add")
+                    Text("Log")
                 }
             
             SettingsView()

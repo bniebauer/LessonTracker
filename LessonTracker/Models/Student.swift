@@ -9,14 +9,22 @@ import Foundation
 import SwiftData
 
 @Model
-class Student: Identifiable {
+class Student: Identifiable, Equatable {
     var id = UUID()
-    var name: String
-    var age: Int
-
-    init(name: String, age: Int) {
+    var name: String = ""
+    var age: Int = 1
+    
+    @Relationship(inverse: \Payment.student)
+    var payments: [Payment]?
+    
+    init(name: String, age: Int = 1) {
         self.name = name
         self.age = age
+        self.payments = []
+    }
+    
+    static func == (lhs: Student, rhs: Student) -> Bool {
+        return lhs.id == rhs.id && lhs.name == rhs.name
     }
 }
 

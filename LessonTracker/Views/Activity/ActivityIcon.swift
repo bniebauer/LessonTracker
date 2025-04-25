@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ActivityIcon: View {
+    let iconName: String? = nil
+    let defaultIconName: String = "calendar.badge.clock"
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            RoundedRectangle(cornerRadius: 21)
+                .fill(Color.blue)
+                .frame(width: 80, height: 80)
+            
+            Image(systemName: iconName ?? defaultIconName)
+                .font(.system(size: 42))
+                .foregroundStyle(.white)
+        }
     }
 }
 
