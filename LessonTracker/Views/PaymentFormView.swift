@@ -11,114 +11,134 @@ import SwiftData
 struct PaymentFormView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    
     @Query(sort: \Activity.name) private var activities: [Activity]
     @Query private var students: [Student]
     
-    @State var selectedStudent: Student?
-    @State var selectedActivitiy: Activity?
-    @State var numberOfLessons: Int = 0
-    @State var amount: Double = 0
-    @State var selectedPaymentType: PaymentType = PaymentType.Cash
-    @State var selectedDate: Date = Date()
-    @State var confirmationNumber: String = ""
+    @StateObject var paymentViewModel = PaymentViewModel()
     
+    @State private var isShowing = false
+    @State private var headerMessage: String = ""
+    @State private var confirmationMessage: String = ""
     
-    var activityLabel: String {
-        get {
-            selectedActivitiy?.name ?? "Select Activity"
+    private var studentPicker: some View {
+        Picker(
+            selection: $paymentViewModel.selectedStudent,
+            label: Text(paymentViewModel.studentLabel)
+        ) {
+            Text("None")
+                .tag(nil as Student?)
+            ForEach(students) { student in
+                Text("\(student.name)").tag(student)
+            }
+        }
+    }
+    
+    private var activityPicker: some View {
+        Picker(
+            selection: $paymentViewModel.selectedActivitiy,
+            label: Text("\(paymentViewModel.activityLabel)")
+        ) {
+            Text("None")
+                .tag(nil as Activity?)
+            ForEach(activities) { activity in
+                Text("\(activity.name)")
+                    .tag(activity)
+            }
+        }
+    }
+    
+    private var paymentData: some View {
+        Section("Amount") {
+            TextField("Amount", value: $paymentViewModel.amount, format: .currency(code: "USD"))
+            
+            Picker(selection: $paymentViewModel.selectedPaymentType, label: Text("\(paymentViewModel.selectedPaymentType)")) {
+                ForEach(PaymentType.allCases, id: \.self) { paymentType in
+                    Text("\(paymentType)").tag(paymentType)
+                }
+            }
+            DatePicker("Payment Date", selection: $paymentViewModel.selectedDate, displayedComponents: [.date])
         }
     }
     
     var body: some View {
-        NavigationStack {
             Form {
                 Section("Students") {
-                    Picker("Student", selection: $selectedStudent) {
-                        ForEach(students) { student in
-                            Text("\(student.name)").tag(student)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                }
-                Section("Activity") {
-                    
-                    Picker(selection: $selectedActivitiy, label: Text("\(activityLabel)")) {
-                        Text("None")
-                            .tag(nil as Activity?)
-                        ForEach(activities, id: \.self) { activitiy in
-                            Text("\(activitiy.name)").tag(activitiy)
-                        }
-                    }
-                    
-                    Stepper("Number of lessons: \(numberOfLessons)", value: $numberOfLessons, in: 0...10)
+                    studentPicker
                 }
                 
-                Section("Amount") {
-                    TextField("Amount", value: $amount, format: .currency(code: "USD"))
-                    Picker(selection: $selectedPaymentType, label: Text("\(selectedPaymentType)")) {
-                        ForEach(PaymentType.allCases, id: \.self) { paymentType in
-                            Text("\(paymentType)").tag(paymentType)
-                        }
-                    }
-                    DatePicker("Payment Date", selection: $selectedDate, displayedComponents: [.date])
+                Section("Activity") {
+                    activityPicker
                 }
+                
+                Section("Number of Lessons") {
+                    Stepper(
+                        value: $paymentViewModel.numberOfLessons,
+                        in: 0...10,
+                        step: 1
+                    ) {
+                        Text("\(paymentViewModel.numberOfLessons)")
+                    }
+                }
+                
+                paymentData
                 
                 Section("Confirmation Number") {
-                    TextField("Confirmation Number", text: $confirmationNumber)
+                    TextField("Confirmation Number", text: $paymentViewModel.confirmationNumber)
                 }
             }
             .navigationTitle("Payment Entry")
             .navigationBarTitleDisplayMode(.inline)
+            .alert(headerMessage, isPresented: $isShowing) {
+                Button("Ok") {
+                    headerMessage = ""
+                    confirmationMessage = ""
+                }
+            } message: {
+                Text(confirmationMessage)
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Save", action: onSaveTapped)
                 }
-                ToolbarItem {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Cancel") {
                         dismiss()
                     }
                 }
             }
-        }
     }
     
     func onSaveTapped() {
-        guard let student = selectedStudent else {
-            return
-        }
-        guard let activity = selectedActivitiy else {
+        guard let purchasedLesson = paymentViewModel.purchaseLesson() else {
+            headerMessage = "Missing Requirement"
+            
+            if paymentViewModel.selectedStudent == nil {
+                confirmationMessage = "Please select a student."
+            }
+            
+            if paymentViewModel.selectedActivitiy == nil {
+                confirmationMessage += "\nPlease select an activity"
+            }
+            
+            isShowing = true
             return
         }
         
-        let purchasedLesson = purchaseLesson(for: student, at: activity)
         modelContext.insert(purchasedLesson)
+        
+//        let paymentRecord = CloudController.shared.generateCloudRecord(for: purchasedLesson)
+//        CloudController.shared.saveRecord(paymentRecord)
         
         dismiss()
     }
-    
-    func purchaseLesson(for student: Student, at activity: Activity) -> Payment {
-        let purchasedLesson = Payment(student: student, activity: activity)
-        purchasedLesson.date = selectedDate
-        purchasedLesson.confirmation = confirmationNumber
-        purchasedLesson.student = selectedStudent!
-        
-        return purchasedLesson
-    }
-    
-    func resetFields() {
-        selectedStudent = nil
-        selectedActivitiy = nil
-        numberOfLessons = 0
-        amount = 0
-        selectedPaymentType = PaymentType.Cash
-        selectedDate = Date()
-        confirmationNumber = ""
-    }
-    
+ 
 }
 
 
 #Preview {
+    NavigationStack {
         PaymentFormView()
             .modelContainer(SampleData.shared.modelContainer)
+    }
 }
