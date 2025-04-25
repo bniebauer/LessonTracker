@@ -64,7 +64,7 @@ struct SettingsView: View {
     private func addNewActivity() {
         if newActivityName.isEmpty { return }
         
-        let newActivity = Activity(name: newActivityName, price: price)
+        let newActivity = Activity(name: newActivityName)
         context.insert(newActivity)
         newActivityName = ""
     }

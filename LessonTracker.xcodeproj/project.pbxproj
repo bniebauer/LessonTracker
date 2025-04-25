@@ -56,6 +56,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3264E80F2DBC49CE00FED7F6 /* Exceptions for "LessonTracker" folder in "LessonTrackerWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LessonTrackerApp.swift,
+				Models/Activity.swift,
+				Models/Payment.swift,
+				Models/SampleData.swift,
+				Models/Student.swift,
+				Views/Activity/ActivityIcon.swift,
+				Views/SettingsView.swift,
+			);
+			target = 321A6DDC2DA724D200D4A59B /* LessonTrackerWatch Watch App */;
+		};
 		3289A3C72D04EF66005B27E5 /* Exceptions for "LessonTracker" folder in "LessonTracker" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -75,6 +88,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				3289A3C72D04EF66005B27E5 /* Exceptions for "LessonTracker" folder in "LessonTracker" target */,
+				3264E80F2DBC49CE00FED7F6 /* Exceptions for "LessonTracker" folder in "LessonTrackerWatch Watch App" target */,
 			);
 			path = LessonTracker;
 			sourceTree = "<group>";
