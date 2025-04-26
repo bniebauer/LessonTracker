@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		321A6DE72DA724D300D4A59B /* LessonTrackerWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 321A6DDD2DA724D200D4A59B /* LessonTrackerWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		321A6DE72DA724D300D4A59B /* ActivitiesToolBoxWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 321A6DDD2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				321A6DE72DA724D300D4A59B /* LessonTrackerWatch Watch App.app in Embed Watch Content */,
+				321A6DE72DA724D300D4A59B /* ActivitiesToolBoxWatch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,14 +49,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		321A6DDD2DA724D200D4A59B /* LessonTrackerWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LessonTrackerWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32C292632C98DDA5004B12C3 /* LessonTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		32C292752C98DDA6004B12C3 /* LessonTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32C2927F2C98DDA6004B12C3 /* LessonTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LessonTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		321A6DDD2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ActivitiesToolBoxWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C292632C98DDA5004B12C3 /* ActivitiesToolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivitiesToolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C292752C98DDA6004B12C3 /* ActivitiesToolBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivitiesToolBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C2927F2C98DDA6004B12C3 /* ActivitiesToolBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivitiesToolBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3264E80F2DBC49CE00FED7F6 /* Exceptions for "LessonTracker" folder in "LessonTrackerWatch Watch App" target */ = {
+		3264E80F2DBC49CE00FED7F6 /* Exceptions for "LessonTracker" folder in "ActivitiesToolBoxWatch Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				LessonTrackerApp.swift,
@@ -67,28 +67,28 @@
 				Views/Activity/ActivityIcon.swift,
 				Views/SettingsView.swift,
 			);
-			target = 321A6DDC2DA724D200D4A59B /* LessonTrackerWatch Watch App */;
+			target = 321A6DDC2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App */;
 		};
-		3289A3C72D04EF66005B27E5 /* Exceptions for "LessonTracker" folder in "LessonTracker" target */ = {
+		3289A3C72D04EF66005B27E5 /* Exceptions for "LessonTracker" folder in "ActivitiesToolBox" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 32C292622C98DDA5004B12C3 /* LessonTracker */;
+			target = 32C292622C98DDA5004B12C3 /* ActivitiesToolBox */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		321A6DDE2DA724D200D4A59B /* LessonTrackerWatch Watch App */ = {
+		321A6DDE2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "LessonTrackerWatch Watch App";
+			path = "ActivitiesToolBoxWatch Watch App";
 			sourceTree = "<group>";
 		};
 		32C292652C98DDA5004B12C3 /* LessonTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3289A3C72D04EF66005B27E5 /* Exceptions for "LessonTracker" folder in "LessonTracker" target */,
-				3264E80F2DBC49CE00FED7F6 /* Exceptions for "LessonTracker" folder in "LessonTrackerWatch Watch App" target */,
+				3289A3C72D04EF66005B27E5 /* Exceptions for "LessonTracker" folder in "ActivitiesToolBox" target */,
+				3264E80F2DBC49CE00FED7F6 /* Exceptions for "LessonTracker" folder in "ActivitiesToolBoxWatch Watch App" target */,
 			);
 			path = LessonTracker;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 				32C292652C98DDA5004B12C3 /* LessonTracker */,
 				32C292782C98DDA6004B12C3 /* LessonTrackerTests */,
 				32C292822C98DDA6004B12C3 /* LessonTrackerUITests */,
-				321A6DDE2DA724D200D4A59B /* LessonTrackerWatch Watch App */,
+				321A6DDE2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App */,
 				32C292642C98DDA5004B12C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,10 +151,10 @@
 		32C292642C98DDA5004B12C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32C292632C98DDA5004B12C3 /* LessonTracker.app */,
-				32C292752C98DDA6004B12C3 /* LessonTrackerTests.xctest */,
-				32C2927F2C98DDA6004B12C3 /* LessonTrackerUITests.xctest */,
-				321A6DDD2DA724D200D4A59B /* LessonTrackerWatch Watch App.app */,
+				32C292632C98DDA5004B12C3 /* ActivitiesToolBox.app */,
+				32C292752C98DDA6004B12C3 /* ActivitiesToolBoxTests.xctest */,
+				32C2927F2C98DDA6004B12C3 /* ActivitiesToolBoxUITests.xctest */,
+				321A6DDD2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,9 +162,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		321A6DDC2DA724D200D4A59B /* LessonTrackerWatch Watch App */ = {
+		321A6DDC2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 321A6DE82DA724D300D4A59B /* Build configuration list for PBXNativeTarget "LessonTrackerWatch Watch App" */;
+			buildConfigurationList = 321A6DE82DA724D300D4A59B /* Build configuration list for PBXNativeTarget "ActivitiesToolBoxWatch Watch App" */;
 			buildPhases = (
 				321A6DD92DA724D200D4A59B /* Sources */,
 				321A6DDA2DA724D200D4A59B /* Frameworks */,
@@ -175,18 +175,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				321A6DDE2DA724D200D4A59B /* LessonTrackerWatch Watch App */,
+				321A6DDE2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App */,
 			);
-			name = "LessonTrackerWatch Watch App";
+			name = "ActivitiesToolBoxWatch Watch App";
 			packageProductDependencies = (
 			);
 			productName = "LessonTrackerWatch Watch App";
-			productReference = 321A6DDD2DA724D200D4A59B /* LessonTrackerWatch Watch App.app */;
+			productReference = 321A6DDD2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		32C292622C98DDA5004B12C3 /* LessonTracker */ = {
+		32C292622C98DDA5004B12C3 /* ActivitiesToolBox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32C292892C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "LessonTracker" */;
+			buildConfigurationList = 32C292892C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "ActivitiesToolBox" */;
 			buildPhases = (
 				32C2925F2C98DDA5004B12C3 /* Sources */,
 				32C292602C98DDA5004B12C3 /* Frameworks */,
@@ -201,16 +201,16 @@
 			fileSystemSynchronizedGroups = (
 				32C292652C98DDA5004B12C3 /* LessonTracker */,
 			);
-			name = LessonTracker;
+			name = ActivitiesToolBox;
 			packageProductDependencies = (
 			);
 			productName = LessonTracker;
-			productReference = 32C292632C98DDA5004B12C3 /* LessonTracker.app */;
+			productReference = 32C292632C98DDA5004B12C3 /* ActivitiesToolBox.app */;
 			productType = "com.apple.product-type.application";
 		};
-		32C292742C98DDA6004B12C3 /* LessonTrackerTests */ = {
+		32C292742C98DDA6004B12C3 /* ActivitiesToolBoxTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32C2928C2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "LessonTrackerTests" */;
+			buildConfigurationList = 32C2928C2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "ActivitiesToolBoxTests" */;
 			buildPhases = (
 				32C292712C98DDA6004B12C3 /* Sources */,
 				32C292722C98DDA6004B12C3 /* Frameworks */,
@@ -224,16 +224,16 @@
 			fileSystemSynchronizedGroups = (
 				32C292782C98DDA6004B12C3 /* LessonTrackerTests */,
 			);
-			name = LessonTrackerTests;
+			name = ActivitiesToolBoxTests;
 			packageProductDependencies = (
 			);
 			productName = LessonTrackerTests;
-			productReference = 32C292752C98DDA6004B12C3 /* LessonTrackerTests.xctest */;
+			productReference = 32C292752C98DDA6004B12C3 /* ActivitiesToolBoxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		32C2927E2C98DDA6004B12C3 /* LessonTrackerUITests */ = {
+		32C2927E2C98DDA6004B12C3 /* ActivitiesToolBoxUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32C2928F2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "LessonTrackerUITests" */;
+			buildConfigurationList = 32C2928F2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "ActivitiesToolBoxUITests" */;
 			buildPhases = (
 				32C2927B2C98DDA6004B12C3 /* Sources */,
 				32C2927C2C98DDA6004B12C3 /* Frameworks */,
@@ -247,11 +247,11 @@
 			fileSystemSynchronizedGroups = (
 				32C292822C98DDA6004B12C3 /* LessonTrackerUITests */,
 			);
-			name = LessonTrackerUITests;
+			name = ActivitiesToolBoxUITests;
 			packageProductDependencies = (
 			);
 			productName = LessonTrackerUITests;
-			productReference = 32C2927F2C98DDA6004B12C3 /* LessonTrackerUITests.xctest */;
+			productReference = 32C2927F2C98DDA6004B12C3 /* ActivitiesToolBoxUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -262,7 +262,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1630;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					321A6DDC2DA724D200D4A59B = {
 						CreatedOnToolsVersion = 16.3;
@@ -280,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 32C2925E2C98DDA5004B12C3 /* Build configuration list for PBXProject "LessonTracker" */;
+			buildConfigurationList = 32C2925E2C98DDA5004B12C3 /* Build configuration list for PBXProject "ActivitiesToolBox" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -294,10 +294,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32C292622C98DDA5004B12C3 /* LessonTracker */,
-				32C292742C98DDA6004B12C3 /* LessonTrackerTests */,
-				32C2927E2C98DDA6004B12C3 /* LessonTrackerUITests */,
-				321A6DDC2DA724D200D4A59B /* LessonTrackerWatch Watch App */,
+				32C292622C98DDA5004B12C3 /* ActivitiesToolBox */,
+				32C292742C98DDA6004B12C3 /* ActivitiesToolBoxTests */,
+				32C2927E2C98DDA6004B12C3 /* ActivitiesToolBoxUITests */,
+				321A6DDC2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -367,17 +367,17 @@
 /* Begin PBXTargetDependency section */
 		321A6DE62DA724D300D4A59B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 321A6DDC2DA724D200D4A59B /* LessonTrackerWatch Watch App */;
+			target = 321A6DDC2DA724D200D4A59B /* ActivitiesToolBoxWatch Watch App */;
 			targetProxy = 321A6DE52DA724D300D4A59B /* PBXContainerItemProxy */;
 		};
 		32C292772C98DDA6004B12C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 32C292622C98DDA5004B12C3 /* LessonTracker */;
+			target = 32C292622C98DDA5004B12C3 /* ActivitiesToolBox */;
 			targetProxy = 32C292762C98DDA6004B12C3 /* PBXContainerItemProxy */;
 		};
 		32C292812C98DDA6004B12C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 32C292622C98DDA5004B12C3 /* LessonTracker */;
+			target = 32C292622C98DDA5004B12C3 /* ActivitiesToolBox */;
 			targetProxy = 32C292802C98DDA6004B12C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -390,18 +390,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = LessonTrackerWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivitiesToolBoxWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.niebauer.LessonTracker;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.niebauer.ActivitiesToolBox;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTracker.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBox.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -419,18 +418,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = LessonTrackerWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivitiesToolBoxWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.niebauer.LessonTracker;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.niebauer.ActivitiesToolBox;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTracker.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBox.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -476,6 +474,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 87W34RA6G8;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -539,6 +538,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 87W34RA6G8;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -568,10 +568,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LessonTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LessonTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivitiesToolBox;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,7 +583,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -599,10 +599,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LessonTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LessonTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivitiesToolBox;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -614,7 +614,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -628,16 +628,15 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBoxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LessonTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LessonTracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActivitiesToolBox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ActivitiesToolBox";
 			};
 			name = Debug;
 		};
@@ -647,16 +646,15 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBoxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LessonTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LessonTracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActivitiesToolBox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ActivitiesToolBox";
 			};
 			name = Release;
 		};
@@ -665,10 +663,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBoxUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -682,10 +679,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 87W34RA6G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.LessonTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.ActivitiesToolBoxUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -697,7 +693,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		321A6DE82DA724D300D4A59B /* Build configuration list for PBXNativeTarget "LessonTrackerWatch Watch App" */ = {
+		321A6DE82DA724D300D4A59B /* Build configuration list for PBXNativeTarget "ActivitiesToolBoxWatch Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				321A6DE92DA724D300D4A59B /* Debug */,
@@ -706,7 +702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32C2925E2C98DDA5004B12C3 /* Build configuration list for PBXProject "LessonTracker" */ = {
+		32C2925E2C98DDA5004B12C3 /* Build configuration list for PBXProject "ActivitiesToolBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32C292872C98DDA6004B12C3 /* Debug */,
@@ -715,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32C292892C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "LessonTracker" */ = {
+		32C292892C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "ActivitiesToolBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32C2928A2C98DDA6004B12C3 /* Debug */,
@@ -724,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32C2928C2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "LessonTrackerTests" */ = {
+		32C2928C2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "ActivitiesToolBoxTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32C2928D2C98DDA6004B12C3 /* Debug */,
@@ -733,7 +729,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32C2928F2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "LessonTrackerUITests" */ = {
+		32C2928F2C98DDA6004B12C3 /* Build configuration list for PBXNativeTarget "ActivitiesToolBoxUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32C292902C98DDA6004B12C3 /* Debug */,

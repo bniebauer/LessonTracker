@@ -30,23 +30,21 @@ struct SettingsView: View {
                             }
                         }
                 }
+                TextField("New Student", text: $newStudentName)
+                    .onSubmit {
+                        addNewStudent()
+                    }
                 
-                HStack {
-                    TextField("New Student", text: $newStudentName)
-                    Button("Add Student", action: addNewStudent)
-                }
             }
             
             Section("Activities") {
                 ForEach(activities) { activity in
                     Text(activity.name)
                 }
-            }
-            
-            Section("Add new activity") {
                 TextField("New Activity", text: $newActivityName)
-                Stepper("Price: \(price, format: .currency(code: "USD"))", value: $price, in: 0...200, step: 20)
-                Button("Add Activity", action: addNewActivity)
+                    .onSubmit {
+                        addNewActivity()
+                    }
             }
             
         }

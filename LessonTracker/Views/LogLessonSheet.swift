@@ -20,6 +20,7 @@ struct LogLessonSheet: View {
                 
                 Text("\(Date.now.formatted(date: .abbreviated, time: .omitted))")
                     .font(.title)
+                    .foregroundStyle(.white)
                 
                 HStack {
                     
@@ -43,6 +44,7 @@ struct LogLessonSheet: View {
                         Text("\(payment.student!.name)")
                             .font(.headline)
                             .padding(.trailing)
+                            .foregroundStyle(.white)
                         
                     }
                     .padding(.trailing)
